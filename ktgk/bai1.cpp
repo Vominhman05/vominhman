@@ -49,30 +49,10 @@ int main() {
     for (const auto& mssv : sortedMssvArray) {
         std::cout << mssv << std::endl;
     }
-    
-    const int SIZE = 5; // Kích thước của mảng
-    std::string arr[SIZE] = {"2305CT1010", "2301CT1234", "2302CT3456", "2305CT3999", "2304CT0002"}; // Mảng đã có sẵn các giá trị
 
-    std::string maxMSSV = "0000"; // Giả sử MSSV lớn nhất ban đầu là "0000"
-    int maxIndex = -1; // Index của phần tử chứa MSSV lớn nhất
-    for (int i = 0; i < SIZE; ++i) {
-        if (arr[i] > maxMSSV) {
-            maxMSSV = arr[i];
-            maxIndex = i;
-        }
-    }
-
-    // In địa chỉ và phần tử MSSV lớn nhất ra màn hình
-    if (maxIndex != -1) {
-        std::cout << "Địa chỉ của phần tử chứa MSSV lớn nhất: " << (void*)&arr[maxIndex] << std::endl;
-        std::cout << "Phần tử chứa MSSV lớn nhất: " << arr[maxIndex] << std::endl;
-    } else {
-        std::cout << "Không tìm thấy phần tử chứa MSSV lớn nhất" << std::endl;
-    }
-
-
-
-
+    // Tìm phần tử có giá trị lớn nhất trong mảng đã sắp xếp
+    std::string maxMSSV = sortedMssvArray.back();
+    std::cout << "\nPhần tử chứa MSSV lớn nhất: " << maxMSSV << std::endl;
 
     return 0;
 }
